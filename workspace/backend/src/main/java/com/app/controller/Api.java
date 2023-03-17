@@ -1,7 +1,5 @@
 package com.app.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,12 +26,35 @@ public class Api {
 	}
 	@GetMapping("/login")
 		public String login(@RequestParam String id, @RequestParam String pw) {
-		User list= service.getUser();
+		User list = null;
+		try {
+			 list= service.getUser();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return list.getId();	
+	}
+	@GetMapping("/check")
+	public String check(@RequestParam String id) {
+		
+	String checkid = null;
+	try {
+		 checkid= service.getId(id);
+		 
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	if(checkid == null) {
+		return "false";	
+	}else {
+		return checkid;
+	}
+}
+		
 		
 		
 				
-		return list.getId();	
-		}
 	
 	
 }

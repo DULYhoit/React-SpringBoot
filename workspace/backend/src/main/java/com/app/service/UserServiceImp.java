@@ -20,4 +20,11 @@ public class UserServiceImp implements UserService {
 		return user;
 	}
 
+
+	@Override
+	public String getId(String id) {
+		String checkid = userDao.getId(id);
+		return checkid;
+	}
+
 }
