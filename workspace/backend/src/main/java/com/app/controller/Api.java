@@ -80,7 +80,7 @@ public class Api {
 		// 임시로 데이터 꺼내는작업
 
 
-		int count = service.insertMember(register);
+		int count = service.regMember(register);
 
 		return "성공";
 	}

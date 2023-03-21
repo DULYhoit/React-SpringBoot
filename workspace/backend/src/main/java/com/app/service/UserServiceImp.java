@@ -34,8 +34,9 @@ public class UserServiceImp implements UserService {
 
 
 	@Override
-	public int insertMember(Register register) {
-		int count = userDao.insertMember(register);
+	public int regMember(Register register) {
+		System.out.println(register.toString());
+		int count = userDao.regMember(register);
 		return count;
 	}
 

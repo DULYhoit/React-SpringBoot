@@ -13,7 +13,7 @@ public interface UserService {
 
 	String getEmail(String email);
 
-	int insertMember(Register register);
+	int regMember(Register register);
 
 	
 

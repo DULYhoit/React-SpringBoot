@@ -2,12 +2,14 @@ package com.app.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import com.app.entity.Register;
 import com.app.entity.User;
 
 @Mapper
 public interface UserDao {
+	
 	@Select("SELECT * FROM MEMBER")
 	User getUser();
 	
@@ -17,7 +19,9 @@ public interface UserDao {
 	@Select("SELECT EMAIL FROM MEMBER WHERE EMAIL = #{email}")
 	String getEmail(String email);
 
-	int insertMember(Register register);
+	int regMember(Register register);
+	
+	
 	
 
 
